@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pancake Sandwich Labs LLC — Software and data, Hudson Valley, NY</title>
+<meta name="description" content="Pancake Sandwich Labs LLC is an independent software studio in Rhinebeck, New York. We build our own software products and take on data engineering engagements as DataDay Consulting.">
+<meta property="og:title" content="Pancake Sandwich Labs LLC">
+<meta property="og:description" content="An independent software studio in Rhinebeck, New York.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pancakesandwichlabs.com">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23141F1E'/%3E%3Cellipse cx='16' cy='11' rx='9' ry='2.6' fill='%23E8E4D8'/%3E%3Cellipse cx='16' cy='17' rx='10.5' ry='3' fill='%23E8E4D8'/%3E%3Cellipse cx='16' cy='23' rx='12' ry='3.4' fill='%23E8E4D8'/%3E%3Crect x='13' y='6' width='6' height='3' rx='1' fill='%23D9A441'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..700,0..100,0..1&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#141F1E;
+    --slate:#1D2E2C;
+    --chalk:#E8E4D8;
+    --muted:#8A9A96;
+    --syrup:#D9A441;
+    --rule:rgba(232,228,216,.14);
+
+    --display:"Fraunces",Georgia,serif;
+    --body:"Inter Tight",system-ui,-apple-system,sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+
+  *{box-sizing:border-box}
+
+  html{-webkit-text-size-adjust:100%}
+
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--chalk);
+    font-family:var(--body);
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  a{color:var(--chalk);text-decoration:none;border-bottom:1px solid var(--syrup);padding-bottom:1px}
+  a:hover{color:var(--syrup)}
+  a:focus-visible{outline:2px solid var(--syrup);outline-offset:3px;border-radius:2px}
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:11px;
+    font-weight:500;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+
+  /* ---- hero ---- */
+
+  .hero{padding:64px 0 76px;text-align:center}
+
+  .mark{
+    width:186px;
+    height:auto;
+    display:block;
+    margin:34px auto 40px;
+  }
+
+  .hero h1{
+    font-family:var(--display);
+    font-variation-settings:"opsz" 120,"SOFT" 44,"WONK" 1;
+    font-weight:600;
+    font-size:clamp(32px,6.4vw,50px);
+    line-height:1.08;
+    letter-spacing:-.015em;
+    margin:0 0 22px;
+    max-width:15ch;
+    margin-inline:auto;
+  }
+
+  .hero p{
+    color:var(--muted);
+    max-width:52ch;
+    margin:0 auto;
+  }
+
+  /* ---- generic section ---- */
+
+  .band{border-top:1px solid var(--rule);padding:52px 0}
+
+  .band-label{margin-bottom:26px}
+
+  .cols{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:38px;
+  }
+
+  .cols h2{
+    font-family:var(--display);
+    font-variation-settings:"opsz" 40,"SOFT" 30,"WONK" 0;
+    font-weight:600;
+    font-size:21px;
+    letter-spacing:-.01em;
+    margin:0 0 10px;
+  }
+
+  .cols p{margin:0;color:var(--muted);font-size:16px}
+
+  /* ---- company record ---- */
+
+  .record{
+    display:grid;
+    grid-template-columns:132px 1fr;
+    gap:11px 22px;
+    font-size:15px;
+  }
+
+  .record dt{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.11em;
+    text-transform:uppercase;
+    color:var(--muted);
+    padding-top:4px;
+  }
+
+  .record dd{margin:0}
+
+  .foot{
+    border-top:1px solid var(--rule);
+    padding:26px 0 60px;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.09em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+
+  /* ---- the one orchestrated moment ---- */
+
+  .cake,.pat{
+    opacity:0;
+    animation:settle .62s cubic-bezier(.22,1.16,.4,1) forwards;
+  }
+  .cake--base{animation-delay:.10s}
+  .cake--mid {animation-delay:.24s}
+  .cake--top {animation-delay:.38s}
+  .pat       {animation-delay:.56s}
+
+  @keyframes settle{
+    from{opacity:0;transform:translateY(-26px)}
+    to  {opacity:1;transform:translateY(0)}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    .cake,.pat{animation:none;opacity:1}
+  }
+
+  @media (max-width:620px){
+    body{font-size:16px}
+    .wrap{padding:0 22px}
+    .hero{padding:44px 0 56px}
+    .mark{width:150px}
+    .cols{grid-template-columns:1fr;gap:30px}
+    .record{grid-template-columns:1fr;gap:3px 0}
+    .record dd{margin-bottom:15px}
+  }
+</style>
+</head>
+<body>
+
+<main class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">Pancake Sandwich Labs LLC &nbsp;·&nbsp; Rhinebeck, New York</div>
+
+    <svg class="mark" viewBox="0 0 260 200" role="img" aria-label="Three stacked discs with a pat of butter — the Pancake Sandwich Labs mark">
+      <!-- base -->
+      <g class="cake cake--base">
+        <path d="M42 150 V172 A88 22 0 0 0 218 172 V150 A88 22 0 0 0 42 150 Z" fill="#1D2E2C"/>
+        <ellipse cx="130" cy="150" rx="88" ry="22" fill="#E8E4D8"/>
+      </g>
+      <!-- middle -->
+      <g class="cake cake--mid">
+        <path d="M50 112 V132 A80 20 0 0 0 210 132 V112 A80 20 0 0 0 50 112 Z" fill="#1D2E2C"/>
+        <ellipse cx="130" cy="112" rx="80" ry="20" fill="#E8E4D8"/>
+      </g>
+      <!-- top -->
+      <g class="cake cake--top">
+        <path d="M58 76 V94 A72 18 0 0 0 202 94 V76 A72 18 0 0 0 58 76 Z" fill="#1D2E2C"/>
+        <ellipse cx="130" cy="76" rx="72" ry="18" fill="#E8E4D8"/>
+      </g>
+      <!-- pat of butter -->
+      <g class="pat">
+        <rect x="112" y="52" width="36" height="15" rx="3" fill="#D9A441"/>
+      </g>
+    </svg>
+
+    <h1>We build software and make sense of data.</h1>
+    <p>Pancake Sandwich Labs is an independent software studio in New York's Hudson Valley. We ship our own products, and take on data engineering work for a small number of clients.</p>
+  </header>
+
+  <section class="band">
+    <div class="eyebrow band-label">Practice</div>
+    <div class="cols">
+      <div>
+        <h2>Products</h2>
+        <p>Software we design, build, and maintain ourselves, released under our own name. Mobile and web, built small and kept sharp.</p>
+      </div>
+      <div>
+        <h2>Consulting</h2>
+        <p>Data engineering, analytics, and warehouse work for clients. These engagements operate as DataDay Consulting.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="eyebrow band-label">Company</div>
+    <dl class="record">
+      <dt>Legal entity</dt>
+      <dd>Pancake Sandwich Labs LLC</dd>
+
+      <dt>Formed</dt>
+      <dd>New York, 2026</dd>
+
+      <dt>Assumed name</dt>
+      <dd>DataDay Consulting</dd>
+
+      <dt>Address</dt>
+      <dd>Rhinebeck, NY 12572<br>United States</dd>
+
+      <dt>Hours</dt>
+      <dd>Monday–Friday, 9:00–17:00 ET</dd>
+
+      <dt>Email</dt>
+      <dd><a href="mailto:hello@pancakesandwichlabs.com">hello@pancakesandwichlabs.com</a></dd>
+    </dl>
+  </section>
+
+  <footer class="foot">
+    © 2026 Pancake Sandwich Labs LLC
+  </footer>
+
+</main>
+
+</body>
+</html>
